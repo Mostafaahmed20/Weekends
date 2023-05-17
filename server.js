@@ -8,7 +8,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 mongoose
-  .connect(process.env.MONGOURI)
+  .connect(process.env.mongouri)
   .then(() => console.log("app conected"))
   .catch((err) => console.log(err));
 app.use(bodyParser.json());
