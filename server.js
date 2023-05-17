@@ -19,17 +19,15 @@ app.use("/Comment", require("./Api/Qutation"));
 app.use("/salesB2C", require("./Api/SalesB2c"));
 app.use(express.static(path.join(__dirname, "/public")));
 
-if (process.env.NODE_ENV === "Production") {
-  app.use(express.static(path.join(__dirname, "/myapp/build")));
-}
+// if (process.env.NODE_ENV === "Production") {
+//   app.use(express.static(path.join(__dirname, "/myapp/build")));
+// }
 
 app.get("*", (req, res) => {
   res.setHeader("content-type", "text/html");
 
   res.sendFile(path.resolve(__dirname, "myapp", "build", "index.html"));
 });
-console.log(process.env.NODE_ENV);
-
-const Port = process.env.PORT;
+const Port = process.env.PORT || 7070;
 
 app.listen(Port, () => console.log(`app is listen to port ${Port}`));
