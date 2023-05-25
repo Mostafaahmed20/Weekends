@@ -37,3 +37,5 @@ Route.post("/Register", async (Req, Res) => {
     res.send(400).json({ msg: err });
   }
 });
+
+module.exports = Route;
