@@ -17,6 +17,7 @@ app.use("/item", require("./Api/NewsApi"));
 app.use("/team", require("./Api/Addteam"));
 app.use("/Comment", require("./Api/Qutation"));
 app.use("/salesB2C", require("./Api/SalesB2c"));
+app.use("/User", require("../Weekends-Backend/Api/UserApi"));
 app.use(express.static(path.join(__dirname, "/public")));
 
 // if (process.env.NODE_ENV === "Production") {
