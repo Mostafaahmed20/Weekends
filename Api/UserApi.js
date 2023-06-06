@@ -29,12 +29,12 @@ Route.post("/Register", async (Req, Res) => {
       if (data) {
         const CheckPass = password === Match.password;
         if (CheckPass) {
-          res.send(200).json({ msg: "logged in success " });
+          res.json({ msg: "logged in success " });
         }
       }
     });
   } catch (err) {
-    res.send(400).json({ msg: err });
+    res.json({ msg: err });
   }
 });
 
