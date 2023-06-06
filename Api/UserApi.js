@@ -7,7 +7,7 @@ Route.post("/Register", async (Req, Res) => {
   try {
     await Usermodel.findOne({ email }).then((data) => {
       if (data) {
-        return Res.send(400).json({ msg: "Email Already Founded " });
+        return Res.status(400).json({ msg: "Email Already Founded " });
       } else {
         new Usermodel({
           name,
@@ -19,7 +19,7 @@ Route.post("/Register", async (Req, Res) => {
       }
     });
   } catch (err) {
-    Res.send(400).json({ msg: err });
+    Res.status(400).json({ msg: err });
   }
 }).post("/Login", async (req, res) => {
   const { email, password } = req.body;

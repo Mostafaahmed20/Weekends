@@ -26,8 +26,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("*", (req, res) => {
   res.setHeader("content-type", "text/html");
-
-  res.sendFile(path.resolve(__dirname, "myapp", "build", "index.html"));
+  res.send("welcome");
 });
 const Port = process.env.PORT || 7070;
 
