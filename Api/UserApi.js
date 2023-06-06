@@ -26,10 +26,8 @@ Route.post("/Register", async (Req, Res) => {
 
   try {
     const Match = await Usermodel.findOne({ email }).then((data) => {
-      console.log(data);
       if (data) {
         if (password === Match.password) {
-          console.log(password , Match.password);
           res.json({ msg: "logged in success" });
         } else {
           res.json({ msg: "Username or password is incorect" });
