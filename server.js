@@ -25,12 +25,7 @@ app.use(express.static(path.join(__dirname, "/public")));
 // }
 
 app.get("*", (req, res) => {
-<<<<<<< HEAD
-  res.setHeader("content-type", "text/html");
-  res.send("welcome");
-=======
-res.json("welcome");
->>>>>>> 9b958a891dc020c0cdee2689644f2b350d5372bf
+  res.json("welcome");
 });
 const Port = process.env.PORT || 7070;
 
