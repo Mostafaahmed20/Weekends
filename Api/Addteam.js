@@ -1,8 +1,8 @@
 // create new profile for our agent
-const teamModel = require("../Models/AddtemModel");
 const express = require("express");
 const router = express.Router();
 const gravatar = require("gravatar");
+const TeamModel = require("../Models/AddtemModel");
 
 router.post("/", async (req, res) => {
   const { pic, name, Account, email, sfid, contact } = req.body;
@@ -54,6 +54,13 @@ router.delete("/:Myid", async (req, res) => {
     });
   } catch (err) {
     res.json({ msg: err });
+  }
+});
+router.delete("/All", (req, res) => {
+  try {
+    res.json({ msg: "deleted All " });
+  } catch (Err) {
+    res.json({ msg: Err });
   }
 });
 
