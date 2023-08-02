@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    await teamModel.find({}).then((data) => {
+    await TeamModel.find({}).then((data) => {
       res.json(data);
     });
   } catch (err) {
@@ -58,7 +58,7 @@ router.delete("/:Myid", async (req, res) => {
 });
 router.delete("/All", (req, res) => {
   try {
-    res.json({ msg: "deleted All " });
+    TeamModel.delete({}).then((data) => res.json({ msg: "deleted all " }));
   } catch (Err) {
     res.json({ msg: Err });
   }
